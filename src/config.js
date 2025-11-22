@@ -1,7 +1,10 @@
 // API Configuration
 // This file centralizes the API URL configuration
 
-const API_URL = import.meta.env.VITE_WEBSITE_URL || 'http://localhost:5000';
+// In production, use relative URLs (same domain)
+// In development, use the full localhost URL
+const isDevelopment = import.meta.env.DEV;
+const API_URL = isDevelopment ? 'http://localhost:5000' : '';
 
 export const config = {
   apiUrl: API_URL,
