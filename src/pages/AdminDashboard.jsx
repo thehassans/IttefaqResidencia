@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import config from '../config';
 
 const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState('media');
@@ -18,19 +19,19 @@ const AdminDashboard = () => {
   }, []);
 
   const fetchMedia = async () => {
-    const res = await fetch('http://localhost:5000/api/media');
+    const res = await fetch(config.endpoints.media);
     const data = await res.json();
     setMediaItems(data);
   };
 
   const fetchInquiries = async () => {
-    const res = await fetch('http://localhost:5000/api/inquiries');
+    const res = await fetch(config.endpoints.inquiries);
     const data = await res.json();
     setInquiries(data);
   };
 
   const fetchSettings = async () => {
-    const res = await fetch('http://localhost:5000/api/settings');
+    const res = await fetch(config.endpoints.settings);
     const data = await res.json();
     setSettings(data);
   };
@@ -39,7 +40,7 @@ const AdminDashboard = () => {
     e.preventDefault();
     setUploading(true);
     const formData = new FormData(e.target);
-    await fetch('http://localhost:5000/api/media', {
+    await fetch(config.endpoints.media, {
       method: 'POST',
       body: formData,
     });
@@ -50,7 +51,7 @@ const AdminDashboard = () => {
 
   const handleSettingsUpdate = async (e) => {
     e.preventDefault();
-    await fetch('http://localhost:5000/api/settings', {
+    await fetch(config.endpoints.settings, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(settings),

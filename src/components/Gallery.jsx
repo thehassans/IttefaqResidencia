@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import config from '../config';
 
 const Gallery = () => {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/media')
+    fetch(config.endpoints.media)
       .then(res => res.json())
       .then(data => setImages(data))
       .catch(err => console.error('Failed to fetch gallery images', err));

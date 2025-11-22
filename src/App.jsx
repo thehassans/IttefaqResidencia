@@ -3,13 +3,14 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Home from './pages/Home';
 import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
+import config from './config';
 
 // SEO Component to update title and meta tags
 const SEO = () => {
   const location = useLocation();
   
   useEffect(() => {
-    fetch('http://localhost:5000/api/settings')
+    fetch(config.endpoints.settings)
       .then(res => res.json())
       .then(settings => {
         if (settings.title) document.title = settings.title;
