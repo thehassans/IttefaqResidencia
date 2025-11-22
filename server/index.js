@@ -118,14 +118,19 @@ app.post('/api/settings', async (req, res) => {
 
 // Serve index.html for all other routes in production (SPA support)
 if (process.env.NODE_ENV === 'production') {
-  app.get('*', (req, res) => {
+  app.use((req, res, next) => {
     // Don't serve index.html for API routes
     if (req.path.startsWith('/api')) {
-      return res.status(404).json({ error: 'API endpoint not found' });
+      return next();
     }
     
+    // Serve index.html for all other routes
     res.setHeader('Content-Type', 'text/html; charset=UTF-8');
-    res.sendFile(path.join(__dirname, '../dist/index.html'));
+    res.sendFile(path.join(__dirname, '../dist/index.html'), (err) => {
+      if (err) {
+        res.status(404).send('Page not found');
+      }
+    });
   });
 }
 
