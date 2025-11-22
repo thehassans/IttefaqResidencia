@@ -1,6 +1,13 @@
 import React from 'react';
 
 const Hero = () => {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <div className="relative h-screen w-full overflow-hidden flex items-center justify-center">
       {/* Background Image/Video Placeholder */}
@@ -24,10 +31,16 @@ const Hero = () => {
           Experience opulent living away from the city hustle. A peaceful, eco-friendly atmosphere with world-class infrastructure.
         </p>
         <div className="flex flex-col md:flex-row justify-center gap-4 animate-slide-up" style={{ animationDelay: '0.4s' }}>
-          <button className="px-8 py-4 bg-primary text-white font-semibold rounded-none hover:bg-white hover:text-primary transition-all duration-300 uppercase tracking-wider">
+          <button 
+            onClick={() => scrollToSection('master-plan')}
+            className="px-8 py-4 bg-primary text-white font-semibold rounded-none hover:bg-white hover:text-primary transition-all duration-300 uppercase tracking-wider cursor-pointer"
+          >
             Explore Master Plan
           </button>
-          <button className="px-8 py-4 border border-white text-white font-semibold rounded-none hover:bg-white hover:text-secondary transition-all duration-300 uppercase tracking-wider">
+          <button 
+            onClick={() => scrollToSection('contact')}
+            className="px-8 py-4 border border-white text-white font-semibold rounded-none hover:bg-white hover:text-secondary transition-all duration-300 uppercase tracking-wider cursor-pointer"
+          >
             Contact Us
           </button>
         </div>

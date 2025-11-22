@@ -74,7 +74,6 @@ const Home = () => {
 
             {/* Image Content */}
             <div className="w-full lg:w-1/2 relative group">
-              <div className="absolute inset-0 bg-[#C5B392] transform translate-x-4 translate-y-4 rounded-lg opacity-20 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-500"></div>
               <div className="relative rounded-lg overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-700">
                 <div 
                   className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500 z-10 cursor-zoom-in"
