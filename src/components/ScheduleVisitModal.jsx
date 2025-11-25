@@ -35,7 +35,7 @@ const ScheduleVisitModal = ({ isOpen, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
       {/* Backdrop */}
       <div 
         className="absolute inset-0 bg-black/90 backdrop-blur-sm transition-opacity duration-300"
@@ -43,7 +43,7 @@ const ScheduleVisitModal = ({ isOpen, onClose }) => {
       ></div>
 
       {/* Modal Content */}
-      <div className="relative w-full max-w-lg bg-[#111] rounded-2xl shadow-[0_0_50px_rgba(212,175,55,0.1)] border border-[#D4AF37]/30 transform transition-all duration-300 animate-zoom-in overflow-hidden">
+      <div className="relative w-full max-w-lg my-auto bg-[#111] rounded-2xl shadow-[0_0_50px_rgba(212,175,55,0.1)] border border-[#D4AF37]/30 transform transition-all duration-300 animate-zoom-in overflow-hidden">
         
         {/* Decorative Header Line */}
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"></div>
