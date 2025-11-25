@@ -358,13 +358,13 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Full Width Map (Now BELOW List) */}
-            <div className="w-full max-w-5xl h-[400px] relative bg-[#E6D5B8] rounded-sm overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-[#D4AF37]/20 group animate-zoom-in" style={{ animationDelay: '0.5s' }}>
+            {/* Complete Map Display - Smaller Size */}
+            <div className="w-full max-w-3xl h-[300px] relative bg-[#E6D5B8] rounded-sm overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-[#D4AF37]/20 group animate-zoom-in" style={{ animationDelay: '0.5s' }}>
               <div className="absolute inset-0 bg-black/0 transition-colors duration-700 group-hover:bg-black/5 z-10"></div>
               <img 
                 src="/master-plan-hq.jpg" 
                 alt="Interactive Master Plan" 
-                className="w-full h-full object-cover object-center transform transition-transform duration-[3s] scale-100 group-hover:scale-105 filter sepia-[0.2] group-hover:sepia-0"
+                className="w-full h-full object-contain object-center transform transition-transform duration-[3s] scale-100 group-hover:scale-105 filter sepia-[0.2] group-hover:sepia-0"
               />
               {/* Markers (Display only, not interactive) */}
               {[
