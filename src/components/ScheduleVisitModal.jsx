@@ -35,6 +35,15 @@ const ScheduleVisitModal = ({ isOpen, onClose }) => {
     };
   }, [isOpen]);
 
+  // Apply scroll lock immediately before render
+  if (isOpen && document.body.style.position !== 'fixed') {
+    const scrollY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = '100%';
+    document.body.style.overflow = 'hidden';
+  }
+
   if (!isOpen) return null;
 
   const handleSubmit = (e) => {
@@ -52,7 +61,7 @@ const ScheduleVisitModal = ({ isOpen, onClose }) => {
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
       {/* Backdrop */}
       <div 
-        className="absolute inset-0 bg-black/95 backdrop-blur-md transition-opacity duration-300"
+        className="absolute inset-0 bg-black/95 backdrop-blur-md"
         onClick={onClose}
       ></div>
 
