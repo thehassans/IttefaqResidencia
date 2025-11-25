@@ -38,7 +38,7 @@ const ScheduleVisitModal = ({ isOpen, onClose }) => {
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
       {/* Backdrop */}
       <div 
-        className="absolute inset-0 bg-black/90 backdrop-blur-sm transition-opacity duration-300"
+        className="absolute inset-0 bg-black/95 backdrop-blur-md transition-opacity duration-300"
         onClick={onClose}
       ></div>
 
