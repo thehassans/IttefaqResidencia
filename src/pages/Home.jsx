@@ -384,15 +384,15 @@ const Home = () => {
               />
               {/* Interactive Markers - Point to locations when clicked */}
               {[
-                  { id: 'education', top: '25%', left: '20%' },
-                  { id: 'health', top: '35%', left: '25%' },
-                  { id: 'cemetery', top: '30%', left: '15%' },
-                  { id: 'highrise', top: '50%', left: '60%' },
-                  { id: 'commercial', top: '65%', left: '40%' },
-                  { id: 'restaurants', top: '55%', left: '70%' },
-                  { id: 'utilities', top: '40%', left: '35%' },
-                  { id: 'roads', top: '45%', left: '50%' },
-                  { id: 'parks', top: '40%', left: '80%' }
+                  { id: 'education', top: '35%', left: '32%' },
+                  { id: 'health', top: '42%', left: '36%' },
+                  { id: 'cemetery', top: '38%', left: '28%' },
+                  { id: 'highrise', top: '55%', left: '58%' },
+                  { id: 'commercial', top: '68%', left: '48%' },
+                  { id: 'restaurants', top: '58%', left: '65%' },
+                  { id: 'utilities', top: '48%', left: '44%' },
+                  { id: 'roads', top: '52%', left: '52%' },
+                  { id: 'parks', top: '48%', left: '72%' }
               ].map((marker) => (
                 <div
                   key={marker.id}
