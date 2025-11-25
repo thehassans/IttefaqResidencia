@@ -26,6 +26,9 @@ export default {
         'zoom-in': 'zoomIn 1.5s ease-out forwards',
         'reveal': 'reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards',
         'float': 'float 6s ease-in-out infinite',
+        'pulse-glow': 'pulseGlow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'marker-pulse': 'markerPulse 1.5s ease-out infinite',
+        'glow-ring': 'glowRing 1.5s ease-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -59,6 +62,40 @@ export default {
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-10px)' },
+        },
+        pulseGlow: {
+          '0%, 100%': { 
+            boxShadow: '0 0 20px rgba(212, 175, 55, 0.5), 0 0 40px rgba(212, 175, 55, 0.3)',
+            transform: 'scale(1)'
+          },
+          '50%': { 
+            boxShadow: '0 0 30px rgba(212, 175, 55, 0.8), 0 0 60px rgba(212, 175, 55, 0.5)',
+            transform: 'scale(1.1)'
+          },
+        },
+        markerPulse: {
+          '0%': { 
+            transform: 'scale(1)',
+            opacity: '1'
+          },
+          '50%': { 
+            transform: 'scale(1.3)',
+            opacity: '0.8'
+          },
+          '100%': { 
+            transform: 'scale(1)',
+            opacity: '1'
+          },
+        },
+        glowRing: {
+          '0%': { 
+            transform: 'scale(1)',
+            opacity: '0.8'
+          },
+          '100%': { 
+            transform: 'scale(2.5)',
+            opacity: '0'
+          },
         },
       },
     },
