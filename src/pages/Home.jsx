@@ -339,52 +339,34 @@ const Home = () => {
             <div className="w-full max-w-6xl animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               <div className="flex flex-wrap justify-center gap-x-8 gap-y-6">
                 {[
-                  { name: 'Education Facility', markerId: 'education' },
-                  { name: 'Health Care Facility', markerId: 'health' },
-                  { name: 'Cemetery', markerId: 'cemetery' },
-                  { name: 'High Rise Buildings', markerId: 'highrise' },
-                  { name: 'Commercial Areas', markerId: 'commercial' },
-                  { name: 'Restaurants Spa & Gym', markerId: 'restaurants' },
-                  { name: '24/7 Availability of Water Gas and Electricity', markerId: null },
-                  { name: 'Wide Carpeted Roads', markerId: 'roads' },
-                  { name: 'Parks and Jogging Tracks', markerId: 'parks' }
+                  'Education Facility', 'Health Care Facility', 'Cemetery', 
+                  'High Rise Buildings', 'Commercial Areas', 'Restaurants Spa & Gym', 
+                  '24/7 Availability of Water Gas and Electricity', 'Wide Carpeted Roads', 
+                  'Parks and Jogging Tracks'
                 ].map((item, index) => (
                   <div 
                     key={index}
-                    onClick={() => item.markerId && setActiveAmenity(item.markerId)}
-                    className={`flex items-center gap-3 group transition-all duration-500 hover:-translate-y-1 ${
-                      item.markerId ? 'cursor-pointer' : 'cursor-default'
-                    } ${
-                      activeAmenity === item.markerId ? 'scale-110' : ''
-                    }`}
+                    className="flex items-center gap-3 group cursor-default transition-all duration-500 hover:-translate-y-1"
                     style={{ animationDelay: `${0.3 + (index * 0.05)}s` }}
                   >
-                    <div className={`w-1.5 h-1.5 bg-[#D4AF37] rotate-45 transition-all duration-500 ${
-                      activeAmenity === item.markerId 
-                        ? 'scale-150 shadow-[0_0_10px_rgba(212,175,55,0.8)]' 
-                        : 'group-hover:scale-150'
-                    }`}></div>
-                    <span className={`text-sm md:text-base font-serif tracking-wide transition-all duration-300 border-b pb-0.5 ${
-                      activeAmenity === item.markerId
-                        ? 'text-[#D4AF37] font-bold border-[#D4AF37] shadow-[0_0_20px_rgba(212,175,55,0.3)]'
-                        : 'text-gray-600 dark:text-gray-300 group-hover:text-[#D4AF37] border-transparent group-hover:border-[#D4AF37]/30'
-                    }`}>
-                      {item.name}
+                    <div className="w-1.5 h-1.5 bg-[#D4AF37] rotate-45 group-hover:scale-150 transition-transform duration-500"></div>
+                    <span className="text-sm md:text-base font-serif tracking-wide text-gray-600 dark:text-gray-300 group-hover:text-[#D4AF37] transition-colors duration-300 border-b border-transparent group-hover:border-[#D4AF37]/30 pb-0.5">
+                      {item}
                     </span>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Interactive Map - Smaller & Centered (Now BELOW List) */}
-            <div className="w-full max-w-2xl h-[250px] relative bg-[#E6D5B8] rounded-sm overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-[#D4AF37]/20 group animate-zoom-in" style={{ animationDelay: '0.5s' }}>
+            {/* Full Width Map (Now BELOW List) */}
+            <div className="w-full max-w-5xl h-[400px] relative bg-[#E6D5B8] rounded-sm overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-[#D4AF37]/20 group animate-zoom-in" style={{ animationDelay: '0.5s' }}>
               <div className="absolute inset-0 bg-black/0 transition-colors duration-700 group-hover:bg-black/5 z-10"></div>
               <img 
                 src="/master-plan-hq.jpg" 
                 alt="Interactive Master Plan" 
                 className="w-full h-full object-cover object-center transform transition-transform duration-[3s] scale-100 group-hover:scale-105 filter sepia-[0.2] group-hover:sepia-0"
               />
-              {/* Markers */}
+              {/* Markers (Display only, not interactive) */}
               {[
                   { id: 'education', top: '25%', left: '20%' },
                   { id: 'health', top: '35%', left: '25%' },
@@ -400,18 +382,8 @@ const Home = () => {
                   className="absolute z-20"
                   style={{ top: marker.top, left: marker.left }}
                 >
-                  {/* Glow Ring - Only shows when active */}
-                  {activeAmenity === marker.id && (
-                    <div className="absolute inset-0 -translate-x-1/2 -translate-y-1/2">
-                      <div className="w-5 h-5 bg-[#D4AF37] rounded-full opacity-80 animate-glow-ring"></div>
-                    </div>
-                  )}
                   {/* Main Marker */}
-                  <div className={`w-3 h-3 bg-[#D4AF37] rounded-full border-2 shadow-lg transition-all duration-500 -translate-x-1/2 -translate-y-1/2 ${
-                    activeAmenity === marker.id 
-                      ? 'border-white animate-marker-pulse scale-150 shadow-[0_0_20px_rgba(212,175,55,0.9)]' 
-                      : 'border-white/70 animate-pulse'
-                  }`}></div>
+                  <div className="w-2.5 h-2.5 bg-[#D4AF37] rounded-full border border-white/70 shadow-lg animate-pulse -translate-x-1/2 -translate-y-1/2"></div>
                 </div>
               ))}
             </div>
