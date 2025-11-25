@@ -386,13 +386,13 @@ const Home = () => {
               {[
                   { id: 'education', top: '35%', left: '32%' },
                   { id: 'health', top: '42%', left: '36%' },
-                  { id: 'cemetery', top: '38%', left: '28%' },
+                  { id: 'cemetery', top: '38%', left: '33%' },
                   { id: 'highrise', top: '55%', left: '58%' },
                   { id: 'commercial', top: '68%', left: '48%' },
                   { id: 'restaurants', top: '58%', left: '65%' },
                   { id: 'utilities', top: '48%', left: '44%' },
                   { id: 'roads', top: '52%', left: '52%' },
-                  { id: 'parks', top: '48%', left: '72%' }
+                  { id: 'parks', top: '48%', left: '62%' }
               ].map((marker) => (
                 <div
                   key={marker.id}
